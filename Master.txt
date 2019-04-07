@@ -12,10 +12,10 @@ void setup() {
 
 void draw() {
   
-  for(int i = 0; i < width; i += 100) {
-    for (int j = 0; j < height; j += 100) {
+  for(int i = 0; i < width; i += 50) {
+    for (int j = 0; j < height; j += 50) {
       fill(0);
-      rect(i,j,100,100);
+      rect(i,j,50,50);
     }
   }
   
@@ -40,8 +40,8 @@ class Snake {
  
    Snake() {
    
-     x = round(random(0, 24)) * 100;
-     y = round(random(0, 14)) * 100;
+     x = round(random(0, 24)) * 50;
+     y = round(random(0, 14)) * 50;
      
    }
    
@@ -50,20 +50,20 @@ class Snake {
    }
  
    void display() {
-     rect(x,y,100,100);
+     rect(x,y,50,50);
    }
  
    void move() {
-     float dy = floor((apple.y - snake.y)/100) * 100;
-     float dx = floor((apple.x - snake.x)/100) * 100;
+     float dy = floor((apple.y - snake.y)/50) * 50;
+     float dx = floor((apple.x - snake.x)/50) * 50;
      
      getDistance();
      
      float sin = dy/distance;
      float cos = dx/distance;
      
-     float speedX = round(cos) * 100;
-     float speedY = round(sin) * 100;
+     float speedX = round(cos) * 50;
+     float speedY = round(sin) * 50;
      
      x += speedX;
      y += speedY;
@@ -78,8 +78,8 @@ class Snake1 {
  
    Snake1() {
    
-     x = round(random(0, 24)) * 100;
-     y = round(random(0, 14)) * 100;
+     x = round(random(0, 24)) * 50;
+     y = round(random(0, 14)) * 50;
      
    }
    
@@ -89,20 +89,20 @@ class Snake1 {
  
    void display() {
      fill(50,50,255);
-     rect(x,y,100,100);
+     rect(x,y,50,50);
    }
  
    void move() {
-     float dy = floor((apple.y - snake1.y)/100) * 100;
-     float dx = floor((apple.x - snake1.x)/100) * 100;
+     float dy = floor((apple.y - snake1.y)/50) * 50;
+     float dx = floor((apple.x - snake1.x)/50) * 50;
      
      getDistance();
      
      float sin = dy/distance;
      float cos = dx/distance;
      
-     float speedX = round(cos) * 100;
-     float speedY = round(sin) * 100;
+     float speedX = round(cos) * 50;
+     float speedY = round(sin) * 50;
      
      x += speedX;
      y += speedY;
@@ -117,8 +117,8 @@ class Snake2 {
  
    Snake2() {
    
-     x = round(random(0, 24)) * 100;
-     y = round(random(0, 14)) * 100;
+     x = round(random(0, 24)) * 50;
+     y = round(random(0, 14)) * 50;
      
    }
    
@@ -127,21 +127,21 @@ class Snake2 {
    }
  
    void display() {
-     fill(230,100,205);
-     rect(x,y,100,100);
+     fill(230,50,205);
+     rect(x,y,50,50);
    }
  
    void move() {
-     float dy = floor((apple.y - snake2.y)/100) * 100;
-     float dx = floor((apple.x - snake2.x)/100) * 100;
+     float dy = floor((apple.y - snake2.y)/50) * 50;
+     float dx = floor((apple.x - snake2.x)/50) * 50;
      
      getDistance();
      
      float sin = dy/distance;
      float cos = dx/distance;
      
-     float speedX = round(cos) * 100;
-     float speedY = round(sin) * 100;
+     float speedX = round(cos) * 50;
+     float speedY = round(sin) * 50;
      
      x += speedX;
      y += speedY;
@@ -160,11 +160,11 @@ class Apple {
   boolean dead;
   
   Apple() {
-    x = round(random(0,4)) * 100;
-    y = round(random(0,4)) * 100;
+    x = round(random(0,4)) * 50;
+    y = round(random(0,4)) * 50;
     r = 255;
-    g = 100;
-    b = 100;
+    g = 50;
+    b = 50;
     a = 255;
     a1 = 255;
     dead = false;
@@ -173,29 +173,29 @@ class Apple {
   
   void display() {
     fill(r,g,b,a);
-    rect(x,y,100,100);
+    rect(x,y,50,50);
   }
   
   void move() {
-    x = floor(mouseX/100) * 100;
-    y = floor(mouseY/100) * 100;
+    x = floor(mouseX/50) * 50;
+    y = floor(mouseY/50) * 50;
   }
   
   void boom() {
     if (snake.x == apple.x && snake.y == apple.y) {
-      snake.x = round(random(0, 24)) * 100;
-      snake.y = round(random(0, 4)) * 100;
+      snake.x = round(random(0, 24)) * 50;
+      snake.y = round(random(0, 4)) * 50;
       a -= 10;
     }
     
     if (snake1.x == apple.x && snake1.y == apple.y) {
-      snake1.x = round(random(0, 24)) * 100;
-      snake1.y = round(random(0, 14)) * 100;
+      snake1.x = round(random(0, 24)) * 50;
+      snake1.y = round(random(0, 14)) * 50;
       a -= 10;
     } 
     if (snake2.x == apple.x && snake2.y == apple.y) {
-      snake2.x = round(random(0, 24)) * 100;
-      snake2.y = round(random(0, 14)) * 100;
+      snake2.x = round(random(0, 24)) * 50;
+      snake2.y = round(random(0, 14)) * 50;
       a -= 10;
     } 
     
